@@ -1,0 +1,35 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.1'
+		classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.4'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.gradle.asciidoctor'
+
+version = '1.0.0-SNAPSHOT'
+
+asciidoctorj {
+	version = '1.5.2'
+}
+
+asciidoctor {
+	backends =	['epub3']
+	options doctype: 'book'
+	attributes	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+				'endpoint-url': 'http://example.org',
+	
+				'source-highlighter' : 'coderay',
+				'imagesdir':'./images',
+				'toc':'left',
+				'icons': 'font',
+				'setanchors':'true',
+				'idprefix':'',
+				'idseparator':'-',
+				'docinfo1':'true'
+}

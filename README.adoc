@@ -1,0 +1,39 @@
+= Asciidoctor Gradle Plugin: Examples
+
+This repository contains a collection of sample projects that demonstrate numerous ways to use the Asciidoctor Gradle
+plugin in a Gradle project.
+
+== Getting the examples
+
+Clone the example repository using git:
+
+ $ git clone https://github.com/rwinch/asciidoctor-gradle-examples
+
+== Example catalog
+
+You can optionally run all of examples at once using the following command from the repository root:
+
+ $ ./gradlew asciidoctor
+
+Alternatively, you can treat each project as a distinct module. Refer to the README file in each individual project to
+learn how to run it.
+
+link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka “The Quickstart”)::
+Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Gradle plugin.
+
+link:asciidoc-to-pdf-example/README.adoc[asciidoc-to-pdf-example]::
+Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Gradle plugin.
+
+link:asciidoc-to-epub3-example/README.adoc[asciidoc-to-epub3-example]::
+Demonstrates how to convert AsciiDoc to epub3 using Asciidoctor epub3 with the Asciidoctor Gradle plugin.
+
+link:asciidoc-to-all-example/README.adoc[asciidoc-to-all-example]::
+Demonstrates how to convert AsciiDoc to HTML5, PDF, & epub3 using Asciidoctor extensions with the Asciidoctor Gradle
+plugin.
+
+== Copyright and Licensing
+
+Copyright (C) 2014 The Asciidoctor Project.
+Free use of this software is granted under the terms of the MIT License.
+
+See the link:LICENSE.adoc[] file for details.
