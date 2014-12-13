@@ -1,0 +1,72 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
+		classpath 'commons-httpclient:commons-httpclient:3.1'
+	}
+}
+
+apply plugin: 'org.ysb33r.vfs'
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+
+version = '1.0.0-SNAPSHOT'
+
+ext {
+	deckjsVersion = 'master'
+	asciidoctorBackendVersion = 'master'
+	downloadDir = new File(buildDir,'download')
+	templateDir = new File(downloadDir,'templates')
+	deckjsDir   = new File(downloadDir,'deck.js')
+}
+task download << {
+	mkdir downloadDir
+	vfs {
+		cp "zip:https://github.com/asciidoctor/asciidoctor-backends/archive/${asciidoctorBackendVersion}.zip!asciidoctor-backends-${asciidoctorBackendVersion}",
+				templateDir, recursive:true, overwrite:true
+		cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
+				deckjsDir, recursive:true, overwrite:true
+	}
+}
+
+download {
+	description "Download extra deckjs resources"
+	outputs.dir templateDir
+	outputs.dir deckjsDir
+}
+
+asciidoctor {
+	sources {
+		include 'example-manual.adoc'
+	}
+
+	resources {
+		from (sourceDir) {
+			include 'images/**'
+		}
+		from (downloadDir) {
+			include 'deck.js/**'
+		}
+	}
+
+	backends    'deckjs'
+
+	attributes	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+				'endpoint-url': 'http://example.org',
+				'source-highlighter' : 'coderay',
+				'imagesdir':'./images',
+				'toc':'left',
+				'icons': 'font',
+				'setanchors':'true',
+				'idprefix':'',
+				'idseparator':'-',
+				'docinfo1':'true'
+
+	options template_dirs : [new File(templateDir,'haml').absolutePath ]
+
+	dependsOn download
+}
