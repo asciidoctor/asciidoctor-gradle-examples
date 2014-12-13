@@ -4,22 +4,18 @@ buildscript {
 	}
 
 	dependencies {
-		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.1'
+		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
 		classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.6'
 	}
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.gradle.asciidoctor'
+apply plugin: 'org.asciidoctor.convert'
 
 version = '1.0.0-SNAPSHOT'
 
-asciidoctorj {
-	version = '1.5.2'
-}
-
 asciidoctor {
-	backends =	['pdf']
+	backends    'pdf'
 	attributes	'sourcedir': project.sourceSets.main.java.srcDirs[0],
 				'endpoint-url': 'http://example.org',
 	
