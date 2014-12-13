@@ -5,13 +5,17 @@ Doc Writer <doc.writer@example.org>
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../java]
+:deckjs_transition: fade
+:navigation:
+:menu:
+:goto:
 
-This is a user manual for an example project.
 
 == Introduction
 
-This project does something.
-We just haven't decided what that is yet.
+* This is a user manual for an example project.
+* This project does something.
+* We just haven't decided what that is yet.
 
 == Source Code
 
@@ -44,11 +48,4 @@ project-version:: {project-version}
 sourcedir:: {sourcedir}
 endpoint-url:: {endpoint-url}
 
-== Includes
 
-.include::subdir/_b.adoc[]
-====
-include::subdir/_b.adoc[]
-====
-
-WARNING: Includes can be tricky!
