@@ -27,6 +27,9 @@ Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Ascii
 link:asciidoc-to-epub3-example/README.adoc[asciidoc-to-epub3-example]::
 Demonstrates how to convert AsciiDoc to epub3 using Asciidoctor epub3 with the Asciidoctor Gradle plugin.
 
+link:asciidoc-to-deckjs-example/README.adoc[asciidoc-to-deckjs-example]::
+Demonstrates how to convert AsciiDoc to deck.js using Asciidoctor deckjs with the Asciidoctor Gradle plugin.
+
 link:asciidoc-to-all-example/README.adoc[asciidoc-to-all-example]::
 Demonstrates how to convert AsciiDoc to HTML5, PDF, & epub3 using Asciidoctor extensions with the Asciidoctor Gradle
 plugin.
