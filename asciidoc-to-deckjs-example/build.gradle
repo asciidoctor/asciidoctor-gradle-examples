@@ -5,11 +5,13 @@ buildscript {
 
 	dependencies {
 		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+        classpath 'com.github.jruby-gradle:jruby-gradle-plugin:0.1.5'
 		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
 		classpath 'commons-httpclient:commons-httpclient:3.1'
 	}
 }
 
+apply plugin: 'com.github.jruby-gradle.base'
 apply plugin: 'org.ysb33r.vfs'
 apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
@@ -23,6 +25,15 @@ ext {
 	templateDir = new File(downloadDir,'templates')
 	deckjsDir   = new File(downloadDir,'deck.js')
 }
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    gems 'rubygems:haml:4.0.6'
+}
+
 task download << {
 	mkdir downloadDir
 	vfs {
@@ -40,6 +51,9 @@ download {
 }
 
 asciidoctor {
+
+    dependsOn jrubyPrepareGems
+
 	sources {
 		include 'example-manual.adoc'
 	}

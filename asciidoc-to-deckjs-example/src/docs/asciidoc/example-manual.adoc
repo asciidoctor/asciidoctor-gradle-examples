@@ -29,6 +29,12 @@ This page was built by the following command:
 
  $ ./gradlew asciidoctor
 
+== Including documents from subdir
+
+.include::subdir/_b.adoc[]
+
+include::subdir/_b.adoc[]
+
 == Images
 
 [.thumb]
