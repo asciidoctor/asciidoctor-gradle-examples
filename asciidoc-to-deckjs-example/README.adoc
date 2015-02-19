@@ -6,6 +6,11 @@ An example project that demonstrates how to convert AsciiDoc to deck.js using th
 
 Convert the AsciiDoc to deck.js by invoking the 'asciidoctor' goal:
 
- $ ./gradlew asciidoctor
+ $ ./gradlew clean asciidoctor
+
+== IntelliJ
+
+If you're using IntelliJ you can generate the IDE's files via:
+ $ ./gradlew idea
 
 Open the file _build/asciidoc/deckjs/example-manual.html_ in your browser to see the generated deckjs file.
