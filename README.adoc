@@ -8,7 +8,13 @@ plugin in a Gradle project.
 Clone the example repository using git:
 
  $ git clone https://github.com/rwinch/asciidoctor-gradle-examples
+ 
+== Setting up IntelliJ
 
+If you are using IntelliJ, you can generate the relevant IDE files using:
+
+ $ ./gradlew idea
+ 
 == Example catalog
 
 You can optionally run all of examples at once using the following command from the repository root:
@@ -29,6 +35,9 @@ Demonstrates how to convert AsciiDoc to epub3 using Asciidoctor epub3 with the A
 
 link:asciidoc-to-deckjs-example/README.adoc[asciidoc-to-deckjs-example]::
 Demonstrates how to convert AsciiDoc to deck.js using Asciidoctor deckjs with the Asciidoctor Gradle plugin.
+
+link:asciidoc-to-revealjs-example/README.adoc[asciidoc-to-revealjs-example]::
+Demonstrates how to convert AsciiDoc to reveal.js using Asciidoctor revealjs with the Asciidoctor Gradle plugin.
 
 link:asciidoc-to-all-example/README.adoc[asciidoc-to-all-example]::
 Demonstrates how to convert AsciiDoc to HTML5, PDF, & epub3 using Asciidoctor extensions with the Asciidoctor Gradle
