@@ -26,7 +26,9 @@ script:
 
 after_script:
   - git add .
+  # something@example.com
   - git config user.email "${GIT_EMAIL}"
+  # First Last
   - git config user.name "${GIT_NAME}"
   - git commit -m "updating outputs"
   # https://${GH_TOKEN}@github.com/rwinch/asciidoctor-gradle-examples.git
