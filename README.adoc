@@ -5,6 +5,12 @@ image::https://travis-ci.org/rwinch/asciidoctor-gradle-examples.svg?branch=maste
 This repository contains a collection of sample projects that demonstrate numerous ways to use the Asciidoctor Gradle
 plugin in a Gradle project.
 
+== Browsing the examples
+
+You can browse the github pages to view the examples, the code, and sample output at
+
+http://rwinch.github.io/asciidoctor-gradle-examples/
+
 == Getting the examples
 
 Clone the example repository using git:
