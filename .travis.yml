@@ -26,7 +26,8 @@ script:
 
 after_script:
   - git add .
-  - git config user.email "rwinch@users.noreply.github.com"
-  - git config user.name "Rob Winch"
+  - git config user.email "${GIT_EMAIL}"
+  - git config user.name "${GIT_NAME}"
   - git commit -m "updating outputs"
-  - git push -f "https://${GH_TOKEN}@github.com/rwinch/asciidoctor-gradle-examples.git" gh-pages
+  # https://${GH_TOKEN}@github.com/rwinch/asciidoctor-gradle-examples.git
+  - git push -f "${GIT_URL}" gh-pages > /dev/null 2>&1
