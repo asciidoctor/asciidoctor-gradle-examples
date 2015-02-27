@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+
+asciidoctorj {
+    version = '1.5.2'
+}
+
+asciidoctor {
+    sourceDir = file("$rootProject.buildDir")
+    sources {
+        include 'index.adoc'
+    }
+
+    backends 'html5'
+
+    attributes 'icons': 'font',
+            'setanchors': 'true',
+            'rootDir': file(rootDir)
+}
+
+task finalize(dependsOn: ['asciidoctor']) {
+    doLast{
+        copy {
+            from "$rootDir/build/asciidoc/html5"
+            into "$rootDir"
+        }
+    }
+}

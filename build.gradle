@@ -11,3 +11,56 @@ idea {
         }
     }
 }
+
+task publish {
+    File index = new File("$rootDir/build/index.adoc")
+    index.parentFile.mkdirs()
+    def header = """= Asciidoctor Gradle Examples
+Rob Winch <https://github.com/rwinch[@rwinch]>; Dan Hyun <https://github.com/danhyun[@danhyun]>
+:icons: font
+:toc: left
+:numbered:
+:github_url: https://github.com/rwinch/asciidoctor-gradle-examples
+:github_project_path: {github_url}/tree/master
+
+[discrete]
+== About
+
+This repository contains examples on how to use Gradle and Asciidoctor to create html5, pdf, epub, deck.js, and reveal.js outputs.
+
+icon:github[2x] {github_url}[View on Github]
+
+"""
+    index.text = header
+}
+
+subprojects {
+    task copyOutput(type: Copy) {
+        from "$project.buildDir/asciidoc"
+        into "$project.projectDir"
+    }
+
+    task publish(dependsOn: ["asciidoctor", "copyOutput"]) {
+        doLast {
+            File index = new File("$rootDir/build/index.adoc")
+            def projectName = project.projectDir.name
+            def content = """include::{rootDir}/$projectName/README.adoc[leveloffset=+1]
+
+=== Source
+
+* {github_project_path}/$projectName[View source]
+
+=== Outputs
+"""
+            index << content
+            def outputs = []
+            new File("$project.buildDir/asciidoc").eachDir { dir ->
+                dir.eachFileMatch(~/.*\.(html|pdf|epub|mobi)/) { f ->
+                    def dirName = dir.name
+                    outputs << "* link:/$rootDir.name/$projectName/$dirName/$f.name[$dirName]\n"
+                }
+            }
+            index << outputs.join('\n') << "\n"
+        }
+    }
+}

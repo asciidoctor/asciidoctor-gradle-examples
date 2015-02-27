@@ -1,0 +1,32 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+os:
+  - linux
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+  - $HOME/.gradle
+
+before_script:
+  - git fetch
+  - git checkout -b gh-pages
+  - git merge origin/master
+  - git rm --cached --ignore-unmatch index.html
+
+script:
+  - ./gradlew clean publish -i --continue
+  - ./gradlew -b finalize.gradle finalize -i
+
+after_script:
+  - git add .
+  - git config user.email "hyun.danny+github@gmail.com"
+  - git config user.name "Dan Hyun"
+  - git commit -m "updating outputs"
+  - git push -f "https://${GH_TOKEN}@github.com/danhyun/asciidoctor-gradle-examples.git" gh-pages

@@ -1,4 +1,4 @@
-= Asciidoctor Gradle Plugin: AsciiDoc to PDF Example
+= PDF Example
 
 An example project that demonstrates how to convert AsciiDoc to PDF using the Asciidoctor Gradle plugin.
 
