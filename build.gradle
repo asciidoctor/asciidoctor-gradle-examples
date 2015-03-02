@@ -22,16 +22,19 @@ Rob Winch <https://github.com/rwinch[@rwinch]>; Dan Hyun <https://github.com/dan
 :numbered:
 :github_url: https://github.com/rwinch/asciidoctor-gradle-examples
 :github_project_path: {github_url}/tree/master
+:github_fork_badge: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
+
+[.badge]
+image::{github_fork_badge}[link="{github_url}"]
 
 [discrete]
 == About
 
 This repository contains examples on how to use Gradle and Asciidoctor to create html5, pdf, epub, deck.js, and reveal.js outputs.
 
-icon:github[2x] {github_url}[View on Github]
-
 """
     index.text = header
+    new File("$rootDir/build/docinfo.html").text = '<style>.badge { position: fixed; top: 0; right: 0; }</style>'
 }
 
 subprojects {
