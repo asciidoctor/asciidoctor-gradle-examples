@@ -25,7 +25,8 @@ asciidoctor {
 
     attributes 'icons': 'font',
             'setanchors': 'true',
-            'rootDir': file(rootDir)
+            'rootDir': file(rootDir),
+            docinfo1: ''
 }
 
 task finalize(dependsOn: ['asciidoctor']) {
