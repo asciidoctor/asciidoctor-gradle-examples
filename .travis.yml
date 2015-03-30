@@ -31,5 +31,5 @@ after_script:
   # First Last
   - git config user.name "${GIT_NAME}"
   - git commit -m "updating outputs"
-  # https://${GH_TOKEN}@github.com/rwinch/asciidoctor-gradle-examples.git
+  # https://${GH_TOKEN}@github.com/asciidoctor/asciidoctor-gradle-examples.git
   - git push -f "${GIT_URL}" gh-pages > /dev/null 2>&1

@@ -20,7 +20,7 @@ Rob Winch <https://github.com/rwinch[@rwinch]>; Dan Hyun <https://github.com/dan
 :icons: font
 :toc: left
 :numbered:
-:github_url: https://github.com/rwinch/asciidoctor-gradle-examples
+:github_url: https://github.com/asciidoctor/asciidoctor-gradle-examples
 :github_project_path: {github_url}/tree/master
 :github_fork_badge: https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png
 

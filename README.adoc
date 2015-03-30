@@ -1,4 +1,4 @@
-image::https://travis-ci.org/rwinch/asciidoctor-gradle-examples.svg?branch=master[Build Status]
+image::https://travis-ci.org/asciidoctor/asciidoctor-gradle-examples.svg?branch=master[Build Status]
 
 = Asciidoctor Gradle Plugin: Examples
 
@@ -9,13 +9,13 @@ plugin in a Gradle project.
 
 You can browse the github pages to view the examples, the code, and sample output at
 
-http://rwinch.github.io/asciidoctor-gradle-examples/
+http://asciidoctor.github.io/asciidoctor-gradle-examples/
 
 == Getting the examples
 
 Clone the example repository using git:
 
- $ git clone https://github.com/rwinch/asciidoctor-gradle-examples
+ $ git clone https://github.com/asciidoctor/asciidoctor-gradle-examples
  
 == Setting up IntelliJ
 
