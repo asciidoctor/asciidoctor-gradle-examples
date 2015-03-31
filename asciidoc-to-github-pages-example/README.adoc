@@ -23,7 +23,7 @@ githubPages {
 	}
 }
 ----
-<1> The *repoUri* property should be set to the 
+<1> The *repoUri* property should be set to the destination repo.
 <2> Both the *githubUsername* and *githubPassword* properties should be set in a gradle.properties in
 the root of the project or better yet in ~/.gradle/gradle.properties
 
@@ -34,4 +34,5 @@ NOTE: Make sure you have a *gh-pages* branch created in your destination repo.
 Add some asciidoc files to `src/docs/asciidoc`
 
 Publish them:
+
 `./gradlew publishGhPages`
