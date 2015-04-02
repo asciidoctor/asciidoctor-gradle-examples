@@ -7,8 +7,8 @@ githubPages {
 	repoUri = '' // Set this to the destination repo
 
 	credentials {
-		username = project.hasProperty('githubUsername') ? project.githubUsername : ''
-		password = project.hasProperty('githubPassword') ? project.githubPassword : ''
+		username = project.hasProperty('githubToken') ? project.githubToken : ''
+		password = ''
 	}
 
 	pages {

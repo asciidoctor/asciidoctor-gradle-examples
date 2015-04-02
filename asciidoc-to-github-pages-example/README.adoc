@@ -5,8 +5,10 @@ using the https://github.com/ajoberstar/gradle-git/wiki/org.ajoberstar.github-pa
 
 == Setup
 
-You'll need to set the *repoUri* property within the configuration for the github task to point to the destination on
-Github:
+You'll need to do the following
+
+1. Create a *Personal access token* within Github (found within Settings -> Applications). 
+2. Create a *gh-pages* branch within your destination git repository.
 
 [code,groovy]
 .build.gradle
@@ -14,8 +16,8 @@ Github:
 githubPages {
 	repoUri = 'https://github.com/asciidoctor/asciidoctor-gradle-examples.git' // <1>
 	credentials { // <2>
-		username = project.hasProperty('githubUsername') ? project.githubUsername : ''
-		password = project.hasProperty('githubPassword') ? project.githubPassword : ''
+		username = project.hasProperty('githubToken') ? project.githubToken : ''
+		password = ''
 	}
 
 	pages {
@@ -24,10 +26,8 @@ githubPages {
 }
 ----
 <1> The *repoUri* property should be set to the destination repo.
-<2> Both the *githubUsername* and *githubPassword* properties should be set in a gradle.properties in
+<2> Use the personal access token from step 1 to set the *githubToken* property in a gradle.properties within
 the root of the project or better yet in ~/.gradle/gradle.properties
-
-NOTE: Make sure you have a *gh-pages* branch created in your destination repo.
 
 == Usage
 
