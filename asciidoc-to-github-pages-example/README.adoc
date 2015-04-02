@@ -5,9 +5,9 @@ using the https://github.com/ajoberstar/gradle-git/wiki/org.ajoberstar.github-pa
 
 == Setup
 
-You'll need to do the following
+You'll need to do the following:
 
-1. Create a *Personal access token* within Github (found within Settings -> Applications). 
+1. Create a *personal access token* in Github (found within Settings -> Applications). 
 2. Create a *gh-pages* branch within your destination git repository.
 
 [code,groovy]
@@ -26,13 +26,10 @@ githubPages {
 }
 ----
 <1> The *repoUri* property should be set to the destination repo.
-<2> Use the personal access token from step 1 to set the *githubToken* property in a gradle.properties within
+<2> Use the personal access token from step 1 to set the *githubToken* property in a gradle.properties file within
 the root of the project or better yet in ~/.gradle/gradle.properties
 
 == Usage
 
-Add some asciidoc files to `src/docs/asciidoc`
-
-Publish them:
-
-`./gradlew publishGhPages`
+1. Add your asciidoc files to `src/docs/asciidoc`
+2. `./gradlew publishGhPages`
