@@ -9,6 +9,7 @@ You'll need to do the following:
 
 1. Create a *personal access token* in Github (found within Settings -> Applications). 
 2. Create a *gh-pages* branch within your destination git repository.
+3. Modify you *build.gradle* and *gradle.properties* files (see below).
 
 [code,groovy]
 .build.gradle
