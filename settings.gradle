@@ -1,5 +1,6 @@
 rootProject.name = 'asciidoctor-gradle-examples'
 
+include 'asciidoc-diagram-to-html-example'
 include 'asciidoc-to-all-example'
 include 'asciidoc-to-epub3-example'
 include 'asciidoc-to-html-example'
