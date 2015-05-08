@@ -35,6 +35,9 @@ learn how to run it.
 link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka “The Quickstart”)::
 Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Gradle plugin.
 
+link:asciidoc-to-html-livereload-example/README.adoc[asciidoc-to-html-livereload-example] ::
+Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Gradle plugin with http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/#livereload[Live Reload] support.
+
 link:asciidoc-to-pdf-example/README.adoc[asciidoc-to-pdf-example]::
 Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Gradle plugin.
 
