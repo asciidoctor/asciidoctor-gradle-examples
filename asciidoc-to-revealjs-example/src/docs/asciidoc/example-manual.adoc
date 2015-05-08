@@ -74,4 +74,10 @@ project-version:: {project-version}
 sourcedir:: {sourcedir}
 endpoint-url:: {endpoint-url}
 
+== build.gradle
+
+[source,groovy]
+----
+include::{build-gradle}[]
+----
 

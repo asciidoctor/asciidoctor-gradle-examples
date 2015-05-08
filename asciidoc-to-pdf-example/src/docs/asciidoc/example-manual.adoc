@@ -52,3 +52,10 @@ include::subdir/_b.adoc[]
 ====
 
 WARNING: Includes can be tricky!
+
+== build.gradle
+
+[source,groovy]
+----
+include::{build-gradle}[]
+----

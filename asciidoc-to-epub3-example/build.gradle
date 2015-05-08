@@ -16,7 +16,8 @@ version = '1.0.0-SNAPSHOT'
 asciidoctor {
 	backends 	'epub3'
 	options     doctype: 'book'
-	attributes	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+	attributes	'build-gradle': file('build.gradle'),
+				'sourcedir': project.sourceSets.main.java.srcDirs[0],
 				'endpoint-url': 'http://example.org',
 				'source-highlighter' : 'coderay',
 				'imagesdir': 'images',
