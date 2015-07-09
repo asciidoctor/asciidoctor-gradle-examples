@@ -14,9 +14,9 @@ Open the file _build/asciidoc/html/example-manual.html_  in your browser to see 
 
 The Gradle build also can support http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/#livereload[Live Reload]
 
-Start by running the build with the watch task
+Start by running the build with Gradle 2.5+ https://docs.gradle.org/2.5/userguide/continuous_build.html[continuous build] feature.
 
- $ ./gradlew asciidoctor watch
+ $ ./gradlew -t asciidoctor
 
 This ensures if you modify example-manual.adoc then everything is rebuilt.
 
