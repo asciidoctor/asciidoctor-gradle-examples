@@ -36,7 +36,7 @@ dependencies {
 task download << {
 	mkdir downloadDir
 	vfs {
-		cp "zip:https://github.com/asciidoctor/asciidoctor-backends/archive/${asciidoctorBackendVersion}.zip!asciidoctor-backends-${asciidoctorBackendVersion}",
+		cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
 				templateDir, recursive:true, overwrite:true
 		cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
 				deckjsDir, recursive:true, overwrite:true
@@ -66,7 +66,7 @@ asciidoctor {
 		}
 	}
 
-	backends    'deckjs'
+	backends    'html5'
 
 	attributes	'build-gradle': file('build.gradle'),
 				'sourcedir': project.sourceSets.main.java.srcDirs[0],
