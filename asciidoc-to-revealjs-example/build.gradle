@@ -18,7 +18,7 @@ apply plugin: 'org.asciidoctor.convert'
 version = '1.0.0-SNAPSHOT'
 
 ext {
-	revealjsVersion = '2.6.2'
+	revealjsVersion = '3.1.0'
 	asciidoctorBackendVersion = 'master'
 	downloadDir = new File(buildDir,'download')
 	templateDir = new File(downloadDir,'templates')
@@ -80,6 +80,7 @@ asciidoctor {
 				'idprefix':'',
 				'idseparator':'-',
 				'docinfo1':'true',
+				'revealjs_theme':'black',
 				'revealjs_transition':'linear',
 				'revealjs_history':'true',
 				'revealjs_slideNumber':'true'
