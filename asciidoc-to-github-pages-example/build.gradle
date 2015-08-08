@@ -1,0 +1,23 @@
+plugins {
+	id 'org.ajoberstar.github-pages' version '1.1.0'
+	id 'org.asciidoctor.gradle.asciidoctor' version '1.5.1'
+}
+
+githubPages {
+	repoUri = '' // Set this to the destination repo
+
+	credentials {
+		username = project.hasProperty('githubToken') ? project.githubToken : ''
+		password = ''
+	}
+
+	pages {
+		from file(asciidoctor.outputDir.path + '/html5')
+	}
+}
+
+publishGhPages.dependsOn asciidoctor
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
