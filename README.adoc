@@ -44,6 +44,9 @@ Demonstrates how to convert AsciiDoc http://asciidoctor.org/docs/asciidoctor-dia
 link:asciidoc-to-pdf-example/README.adoc[asciidoc-to-pdf-example]::
 Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Gradle plugin.
 
+link:asciidoc-to-pdf-with-theme-example/README.adoc[asciidoc-to-pdf-with-theme-example]::
+Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Gradle plugin using a custom theme.
+
 link:asciidoc-to-epub3-example/README.adoc[asciidoc-to-epub3-example]::
 Demonstrates how to convert AsciiDoc to epub3 using Asciidoctor epub3 with the Asciidoctor Gradle plugin.
 
