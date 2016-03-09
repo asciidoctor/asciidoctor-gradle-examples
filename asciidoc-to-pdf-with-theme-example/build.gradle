@@ -13,12 +13,14 @@ plugins {
     id 'org.asciidoctor.convert' version '1.5.3'
 }
 
+apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
 
 asciidoctor {
     backends 'pdf'
     attributes 'pdf-stylesdir': 'theme',
-            'pdf-style': 'custom'
+            'pdf-style': 'custom',
+            'sourcedir': project.sourceSets.main.java.srcDirs[0]
 }
 
 defaultTasks 'asciidoctor'

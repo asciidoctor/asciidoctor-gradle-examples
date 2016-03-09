@@ -15,7 +15,7 @@ Check the <<Attributes>> section.
 
 This page was built by the following command:
 
- $ mvn
+ $ ./gradlew asciidoctor
 
 === Attributes
 
