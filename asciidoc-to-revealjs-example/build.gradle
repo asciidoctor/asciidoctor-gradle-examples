@@ -72,18 +72,18 @@ asciidoctor {
 	attributes	'build-gradle': file('build.gradle'),
 				'sourcedir': project.sourceSets.main.java.srcDirs[0],
 				'endpoint-url': 'http://example.org',
-				'source-highlighter' : 'coderay',
-				'imagesdir':'./images',
-				'toc':'left',
+				'source-highlighter': 'coderay',
+				'imagesdir': './images',
+				'toc': 'left',
 				'icons': 'font',
-				'setanchors':'true',
-				'idprefix':'',
-				'idseparator':'-',
-				'docinfo1':'true',
-				'revealjs_theme':'black',
-				'revealjs_transition':'linear',
-				'revealjs_history':'true',
-				'revealjs_slideNumber':'true'
+				'setanchors': '',
+				'idprefix': '',
+				'idseparator': '-',
+				'docinfo1': '',
+				'revealjs_theme': 'black',
+				'revealjs_transition': 'linear',
+				'revealjs_history': 'true',
+				'revealjs_slideNumber': 'true'
 
 	options template_dirs : [new File(templateDir,'templates/slim').absolutePath ]
 
