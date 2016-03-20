@@ -55,7 +55,7 @@ asciidoctor {
     dependsOn jrubyPrepareGems
 
 	sources {
-		include 'example-manual.adoc'
+		include 'example-deck.adoc'
 	}
 
 	resources {

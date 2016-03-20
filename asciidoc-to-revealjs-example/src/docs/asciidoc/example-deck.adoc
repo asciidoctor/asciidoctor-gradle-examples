@@ -1,4 +1,4 @@
-= Example Manual
+= Example Deck
 Doc Writer <doc.writer@example.org>
 2014-09-09
 :revnumber: {project-version}
@@ -9,8 +9,8 @@ ifndef::sourcedir[:sourcedir: ../java]
 == Introduction
 
 [%step]
-* This is a user manual for an example project.
-* This project does something.
+* This is an example deck.
+* This deck teaches something.
 * We just haven't decided what that is yet.
 
 == Speaker Notes
@@ -80,4 +80,3 @@ endpoint-url:: {endpoint-url}
 ----
 include::{build-gradle}[]
 ----
-
