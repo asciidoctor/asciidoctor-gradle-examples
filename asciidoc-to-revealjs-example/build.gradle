@@ -6,7 +6,7 @@ buildscript {
 }
 
 plugins {
-  id 'org.asciidoctor.convert' version '1.5.2'
+  id 'org.asciidoctor.convert' version '1.5.3'
   id 'com.github.jruby-gradle.base' version '0.1.5'
 }
 
@@ -30,8 +30,8 @@ repositories {
 }
 
 dependencies {
-    gems 'rubygems:slim:2.1.0'
-    gems 'rubygems:thread_safe:0.3.4'
+    gems 'rubygems:slim:3.0.6'
+    gems 'rubygems:thread_safe:0.3.5'
 }
 
 task download << {
