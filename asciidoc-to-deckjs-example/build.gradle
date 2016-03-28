@@ -6,8 +6,8 @@ buildscript {
 }
 
 plugins {
-  id 'org.asciidoctor.convert' version '1.5.2'
-  id 'com.github.jruby-gradle.base' version '0.1.5'
+  id 'org.asciidoctor.convert' version '1.5.3'
+  id 'com.github.jruby-gradle.base' version '1.2.1'
 }
 
 apply plugin: 'com.github.jruby-gradle.base'
@@ -49,9 +49,12 @@ download {
 	outputs.dir deckjsDir
 }
 
-asciidoctor {
+asciidoctorj {
+    version = '1.5.4'
+}
 
-    dependsOn jrubyPrepareGems
+asciidoctor {
+    dependsOn jrubyPrepare
 
 	sources {
 		include 'example-manual.adoc'

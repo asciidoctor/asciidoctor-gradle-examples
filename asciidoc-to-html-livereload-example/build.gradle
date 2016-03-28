@@ -1,5 +1,5 @@
 plugins {
-	id 'org.asciidoctor.convert' version '1.5.2'
+	id 'org.asciidoctor.convert' version '1.5.3'
 	id 'org.kordamp.gradle.livereload' version '0.2.1'
 }
 
@@ -8,6 +8,10 @@ apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'org.kordamp.gradle.livereload'
 
 version = '1.0.0-SNAPSHOT'
+
+asciidoctorj {
+    version = '1.5.4'
+}
 
 asciidoctor {
 	def source = project.sourceSets.main.java.srcDirs[0]

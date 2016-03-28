@@ -1,13 +1,13 @@
 buildscript {
 	dependencies {
-		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
+		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
 		classpath 'commons-httpclient:commons-httpclient:3.1'
 	}
 }
 
 plugins {
   id 'org.asciidoctor.convert' version '1.5.3'
-  id 'com.github.jruby-gradle.base' version '0.1.5'
+  id 'com.github.jruby-gradle.base' version '1.2.1'
 }
 
 apply plugin: 'com.github.jruby-gradle.base'
@@ -18,7 +18,7 @@ apply plugin: 'org.asciidoctor.convert'
 version = '1.0.0-SNAPSHOT'
 
 ext {
-	revealjsVersion = '3.1.0'
+	revealjsVersion = '3.2.0'
 	asciidoctorBackendVersion = 'master'
 	downloadDir = new File(buildDir,'download')
 	templateDir = new File(downloadDir,'templates')
@@ -50,9 +50,13 @@ download {
 	outputs.dir revealjsDir
 }
 
+asciidoctorj {
+  version = '1.5.4'
+}
+
 asciidoctor {
 
-    dependsOn jrubyPrepareGems
+    dependsOn jrubyPrepare
 
 	sources {
 		include 'example-deck.adoc'
