@@ -20,3 +20,4 @@ build/
 .gradle/
 atlassian-ide-plugin.xml
 index.adoc
+*~
