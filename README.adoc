@@ -57,7 +57,7 @@ link:asciidoc-to-revealjs-example/README.adoc[asciidoc-to-revealjs-example]::
 Demonstrates how to convert AsciiDoc to reveal.js using Asciidoctor revealjs with the Asciidoctor Gradle plugin.
 
 link:asciidoc-to-all-example/README.adoc[asciidoc-to-all-example]::
-Demonstrates how to convert AsciiDoc to HTML5, PDF, & epub3 using Asciidoctor extensions with the Asciidoctor Gradle
+Demonstrates how to convert AsciiDoc to HTML5, PDF, DocBook & epub3 using Asciidoctor extensions with the Asciidoctor Gradle
 plugin.
 
 == Copyright and Licensing

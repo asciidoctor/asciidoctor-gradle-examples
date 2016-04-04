@@ -19,7 +19,7 @@ asciidoctorj {
 }
 
 asciidoctor {
-	backends    'html5','pdf','epub3'
+	backends    'html5','pdf','epub3','docbook'
 	attributes	'build-gradle': file('build.gradle'),
 				'sourcedir': project.sourceSets.main.java.srcDirs[0],
 				'endpoint-url': 'http://example.org',
