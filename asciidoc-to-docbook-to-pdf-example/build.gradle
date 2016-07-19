@@ -23,4 +23,9 @@ asciidoctor {
 				'idprefix':'',
 				'idseparator':'-',
 				'docinfo1':'true'
+    resources {
+        from (sourceDir) {
+        	include '**/images/**'
+        }
+    }
 }

@@ -1,0 +1,1 @@
+content from _src/docs/asciidoc/manual/subdir/c.adoc_.
