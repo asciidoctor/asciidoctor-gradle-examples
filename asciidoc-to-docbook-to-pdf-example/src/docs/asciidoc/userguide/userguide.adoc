@@ -1,6 +1,6 @@
-= Userguide
+= User guide
 
-This is a user manual for an example project.
+This is a user guide for an example project.
 
 == Introduction
 

@@ -1,6 +1,6 @@
-= Userguide
+= Reference
 
-This is a user manual for an example project.
+This is a reference manual for an example project.
 
 == Introduction
 
