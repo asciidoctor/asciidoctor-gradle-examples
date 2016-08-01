@@ -81,7 +81,7 @@ asciidoctor {
 				'toc': 'left',
 				'icons': 'font',
 				'setanchors': '',
-				'idprefix': '',
+				'idprefix': 'slide-',
 				'idseparator': '-',
 				'docinfo1': '',
 				'revealjs_theme': 'black',
