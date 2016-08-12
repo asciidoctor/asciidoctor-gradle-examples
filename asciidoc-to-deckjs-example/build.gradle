@@ -1,13 +1,13 @@
 buildscript {
-  dependencies {
-	classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
-	classpath 'commons-httpclient:commons-httpclient:3.1'
-  }
+    dependencies {
+        classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
+        classpath 'commons-httpclient:commons-httpclient:3.1'
+    }
 }
 
 plugins {
-  id 'org.asciidoctor.convert' version '1.5.3'
-  id 'com.github.jruby-gradle.base' version '1.2.1'
+    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'com.github.jruby-gradle.base' version '1.2.1'
 }
 
 apply plugin: 'com.github.jruby-gradle.base'
@@ -18,11 +18,11 @@ apply plugin: 'org.asciidoctor.convert'
 version = '1.0.0-SNAPSHOT'
 
 ext {
-	deckjsVersion = 'master'
-	asciidoctorBackendVersion = 'master'
-	downloadDir = new File(buildDir,'download')
-	templateDir = new File(downloadDir,'templates')
-	deckjsDir   = new File(downloadDir,'deck.js')
+    deckjsVersion = 'master'
+    asciidoctorBackendVersion = 'master'
+    downloadDir = new File(buildDir,'download')
+    templateDir = new File(downloadDir,'templates')
+    deckjsDir   = new File(downloadDir,'deck.js')
 }
 
 repositories {
@@ -34,19 +34,19 @@ dependencies {
 }
 
 task download << {
-	mkdir downloadDir
-	vfs {
-		cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
-				templateDir, recursive:true, overwrite:true
-		cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
-				deckjsDir, recursive:true, overwrite:true
-	}
+    mkdir downloadDir
+    vfs {
+        cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
+                templateDir, recursive:true, overwrite:true
+        cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
+                deckjsDir, recursive:true, overwrite:true
+    }
 }
 
 download {
-	description "Download extra deckjs resources"
-	outputs.dir templateDir
-	outputs.dir deckjsDir
+    description "Download extra deckjs resources"
+    outputs.dir templateDir
+    outputs.dir deckjsDir
 }
 
 asciidoctorj {
@@ -56,34 +56,35 @@ asciidoctorj {
 asciidoctor {
     dependsOn jrubyPrepare
 
-	sources {
-		include 'example-manual.adoc'
-	}
+    sources {
+        include 'example-manual.adoc'
+    }
 
-	resources {
-		from (sourceDir) {
-			include 'images/**'
-		}
-		from (downloadDir) {
-			include 'deck.js/**'
-		}
-	}
+    resources {
+        from (sourceDir) {
+            include 'images/**'
+        }
+        from (downloadDir) {
+            include 'deck.js/**'
+        }
+    }
 
-	backends    'html5'
+    backends 'html5'
 
-	attributes	'build-gradle': file('build.gradle'),
-				'sourcedir': project.sourceSets.main.java.srcDirs[0],
-				'endpoint-url': 'http://example.org',
-				'source-highlighter' : 'coderay',
-				'imagesdir':'./images',
-				'toc':'left',
-				'icons': 'font',
-				'setanchors':'true',
-				'idprefix':'',
-				'idseparator':'-',
-				'docinfo1':'true'
+    attributes \
+        'build-gradle': file('build.gradle'),
+        'sourcedir': project.sourceSets.main.java.srcDirs[0],
+        'endpoint-url': 'http://example.org',
+        'source-highlighter': 'coderay',
+        'imagesdir': './images',
+        'toc': 'left',
+        'icons': 'font',
+        'setanchors': '',
+        'idprefix': '',
+        'idseparator': '-',
+        'docinfo1': ''
 
-	options template_dirs : [new File(templateDir,'haml').absolutePath ]
+    options template_dirs : [new File(templateDir,'haml').absolutePath ]
 
-	dependsOn download
+    dependsOn download
 }

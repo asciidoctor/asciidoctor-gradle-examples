@@ -1,6 +1,6 @@
 plugins {
-	id 'org.asciidoctor.convert' version '1.5.3'
-	id 'org.kordamp.gradle.livereload' version '0.2.1'
+    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.kordamp.gradle.livereload' version '0.2.1'
 }
 
 apply plugin: 'java'
@@ -14,27 +14,27 @@ asciidoctorj {
 }
 
 asciidoctor {
-	def source = project.sourceSets.main.java.srcDirs[0]
-	def build = file('build.gradle')
+    def source = project.sourceSets.main.java.srcDirs[0]
+    def build = file('build.gradle')
 
-	// add extra inputs since these include files that are included
-	inputs.dir source
-	inputs.dir source
+    // add extra inputs since these include files that are included
+    inputs.dir source
+    inputs.dir source
 
-	attributes	'build-gradle': file('build.gradle'),
-				'sourcedir': source,
-				'endpoint-url': 'http://example.org',
-
-				'source-highlighter' : 'coderay',
-				'imagesdir':'images',
-				'toc':'left',
-				'icons': 'font',
-				'setanchors':'true',
-				'idprefix':'',
-				'idseparator':'-',
-				'docinfo1':'true'
+    attributes \
+        'build-gradle': file('build.gradle'),
+        'sourcedir': source,
+        'endpoint-url': 'http://example.org',
+        'source-highlighter': 'coderay',
+        'imagesdir': 'images',
+        'toc': 'left',
+        'icons': 'font',
+        'setanchors': '',
+        'idprefix': '',
+        'idseparator': '-',
+        'docinfo1': ''
 }
 
 liveReload {
-  docRoot asciidoctor.outputDir.canonicalPath
+    docRoot asciidoctor.outputDir.canonicalPath
 }

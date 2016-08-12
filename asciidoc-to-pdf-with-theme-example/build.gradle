@@ -22,9 +22,10 @@ asciidoctorj {
 
 asciidoctor {
     backends 'pdf'
-    attributes 'pdf-stylesdir': 'theme',
-            'pdf-style': 'custom',
-            'sourcedir': project.sourceSets.main.java.srcDirs[0]
+    attributes \
+        'pdf-stylesdir': 'theme',
+        'pdf-style': 'custom',
+        'sourcedir': project.sourceSets.main.java.srcDirs[0]
 }
 
 defaultTasks 'asciidoctor'
