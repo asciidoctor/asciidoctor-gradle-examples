@@ -20,13 +20,12 @@ asciidoctor {
     sources {
         include 'index.adoc'
     }
-
     backends 'html5'
-
-    attributes 'icons': 'font',
-            'setanchors': 'true',
-            'rootDir': file(rootDir),
-            docinfo1: ''
+    attributes \
+        'icons': 'font',
+        'setanchors': '',
+        'rootDir': file(rootDir),
+        'docinfo1': ''
 }
 
 task finalize(dependsOn: ['asciidoctor']) {

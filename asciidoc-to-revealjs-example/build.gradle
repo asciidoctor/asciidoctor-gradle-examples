@@ -1,8 +1,8 @@
 buildscript {
-	dependencies {
-		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
-		classpath 'commons-httpclient:commons-httpclient:3.1'
-	}
+    dependencies {
+        classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
+        classpath 'commons-httpclient:commons-httpclient:3.1'
+    }
 }
 
 plugins {
@@ -18,11 +18,11 @@ apply plugin: 'org.asciidoctor.convert'
 version = '1.0.0-SNAPSHOT'
 
 ext {
-	revealjsVersion = '3.2.0'
-	asciidoctorBackendVersion = 'master'
-	downloadDir = new File(buildDir,'download')
-	templateDir = new File(downloadDir,'templates')
-	revealjsDir   = new File(downloadDir,'reveal.js')
+    revealjsVersion = '3.2.0'
+    asciidoctorBackendVersion = 'master'
+    downloadDir = new File(buildDir,'download')
+    templateDir = new File(downloadDir,'templates')
+    revealjsDir   = new File(downloadDir,'reveal.js')
 }
 
 repositories {
@@ -35,19 +35,19 @@ dependencies {
 }
 
 task download << {
-	mkdir downloadDir
-	vfs {
-		cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
-				templateDir, recursive:true, overwrite:true
-		cp "zip:https://github.com/hakimel/reveal.js/archive/${revealjsVersion}.zip!reveal.js-${revealjsVersion}",
+    mkdir downloadDir
+    vfs {
+        cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
+                templateDir, recursive:true, overwrite:true
+        cp "zip:https://github.com/hakimel/reveal.js/archive/${revealjsVersion}.zip!reveal.js-${revealjsVersion}",
                 revealjsDir, recursive:true, overwrite:true
-	}
+    }
 }
 
 download {
-	description "Download extra revealjs resources"
-	outputs.dir templateDir
-	outputs.dir revealjsDir
+    description "Download extra revealjs resources"
+    outputs.dir templateDir
+    outputs.dir revealjsDir
 }
 
 asciidoctorj {
@@ -55,41 +55,34 @@ asciidoctorj {
 }
 
 asciidoctor {
-
-    dependsOn jrubyPrepare
-
-	sources {
-		include 'example-deck.adoc'
-	}
-
-	resources {
-		from (sourceDir) {
-			include 'images/**'
-		}
-		from (downloadDir) {
-			include 'reveal.js/**'
-		}
-	}
-
-	backends    'revealjs'
-
-	attributes	'build-gradle': file('build.gradle'),
-				'sourcedir': project.sourceSets.main.java.srcDirs[0],
-				'endpoint-url': 'http://example.org',
-				'source-highlighter': 'coderay',
-				'imagesdir': './images',
-				'toc': 'left',
-				'icons': 'font',
-				'setanchors': '',
-				'idprefix': '',
-				'idseparator': '-',
-				'docinfo1': '',
-				'revealjs_theme': 'black',
-				'revealjs_transition': 'linear',
-				'revealjs_history': 'true',
-				'revealjs_slideNumber': 'true'
-
-	options template_dirs : [new File(templateDir,'templates/slim').absolutePath ]
-
-	dependsOn download
+    dependsOn jrubyPrepare, download
+    sources {
+        include 'example-deck.adoc'
+    }
+    resources {
+        from (sourceDir) {
+            include 'images/**'
+        }
+        from (downloadDir) {
+            include 'reveal.js/**'
+        }
+    }
+    backends 'revealjs'
+    attributes \
+        'build-gradle': file('build.gradle'),
+        'sourcedir': project.sourceSets.main.java.srcDirs[0],
+        'endpoint-url': 'http://example.org',
+        'source-highlighter': 'coderay',
+        'imagesdir': './images',
+        'toc': 'left',
+        'icons': 'font',
+        'setanchors': '',
+        'idprefix': '',
+        'idseparator': '-',
+        'docinfo1': '',
+        'revealjs_theme': 'black',
+        'revealjs_transition': 'linear',
+        'revealjs_history': 'true',
+        'revealjs_slideNumber': 'true'
+    options template_dirs: [new File(templateDir,'templates/slim').absolutePath]
 }
