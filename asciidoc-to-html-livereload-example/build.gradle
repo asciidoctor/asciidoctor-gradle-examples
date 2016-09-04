@@ -10,7 +10,7 @@ apply plugin: 'org.kordamp.gradle.livereload'
 version = '1.0.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.5.4'
+    version = '1.5.4.1'
 }
 
 asciidoctor {
