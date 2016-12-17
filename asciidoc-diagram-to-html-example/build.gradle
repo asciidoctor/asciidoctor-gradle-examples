@@ -9,7 +9,7 @@ apply plugin: 'org.asciidoctor.convert'
 version = '1.0.0-SNAPSHOT'
 
 dependencies {
-    gems 'rubygems:asciidoctor-diagram:1.5.1'
+    gems 'rubygems:asciidoctor-diagram:1.5.2'
 }
 
 asciidoctorj {
