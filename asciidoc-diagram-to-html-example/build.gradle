@@ -13,7 +13,7 @@ dependencies {
 }
 
 asciidoctorj {
-    version = '1.5.4.1'
+    version = '1.5.5'
 }
 
 asciidoctor {
