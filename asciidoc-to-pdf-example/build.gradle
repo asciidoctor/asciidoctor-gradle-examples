@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.14'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15'
     }
 }
 

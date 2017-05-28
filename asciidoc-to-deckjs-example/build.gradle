@@ -33,13 +33,15 @@ dependencies {
     gems 'rubygems:haml:4.0.7'
 }
 
-task download << {
-    mkdir downloadDir
-    vfs {
-        cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
-                templateDir, recursive:true, overwrite:true
-        cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
-                deckjsDir, recursive:true, overwrite:true
+task download {
+    doLast {
+        mkdir downloadDir
+        vfs {
+            cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
+            templateDir, recursive:true, overwrite:true
+            cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
+            deckjsDir, recursive:true, overwrite:true
+        }
     }
 }
 
