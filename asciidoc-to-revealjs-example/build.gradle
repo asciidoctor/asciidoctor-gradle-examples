@@ -19,7 +19,7 @@ version = '1.0.0-SNAPSHOT'
 
 ext {
     revealjsVersion = '3.3.0'
-    asciidoctorBackendVersion = 'master'
+    asciidoctorBackendVersion = '1.0.4'
     downloadDir = new File(buildDir,'download')
     templateDir = new File(downloadDir,'templates')
     revealjsDir   = new File(downloadDir,'reveal.js')
@@ -38,7 +38,7 @@ task download {
     doLast {
         mkdir downloadDir
         vfs {
-            cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
+            cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/v${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
             templateDir, recursive:true, overwrite:true
             cp "zip:https://github.com/hakimel/reveal.js/archive/${revealjsVersion}.zip!reveal.js-${revealjsVersion}",
             revealjsDir, recursive:true, overwrite:true
