@@ -32,14 +32,14 @@ repositories {
 dependencies {
     gems 'rubygems:slim:3.0.8'
     gems 'rubygems:thread_safe:0.3.5'
+    gems 'rubygems:asciidoctor-revealjs:1.0.4'
+
 }
 
 task download {
     doLast {
         mkdir downloadDir
         vfs {
-            cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
-            templateDir, recursive:true, overwrite:true
             cp "zip:https://github.com/hakimel/reveal.js/archive/${revealjsVersion}.zip!reveal.js-${revealjsVersion}",
             revealjsDir, recursive:true, overwrite:true
         }
@@ -53,7 +53,7 @@ download {
 }
 
 asciidoctorj {
-  version = '1.5.5'
+  version = '1.5.4'
 }
 
 asciidoctor {
@@ -69,6 +69,8 @@ asciidoctor {
             include 'reveal.js/**'
         }
     }
+    gemPath = jrubyPrepare.outputDir
+    requires = ['asciidoctor-revealjs']
     backends 'revealjs'
     attributes \
         'build-gradle': file('build.gradle'),
@@ -86,5 +88,4 @@ asciidoctor {
         'revealjs_transition': 'linear',
         'revealjs_history': 'true',
         'revealjs_slideNumber': 'true'
-    options template_dirs: [new File(templateDir,'templates/slim').absolutePath]
 }
