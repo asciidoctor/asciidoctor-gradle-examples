@@ -8,6 +8,11 @@ apply plugin: 'org.asciidoctor.convert'
 
 version = '1.0.0-SNAPSHOT'
 
+repositories {
+    mavenLocal()
+    maven { url 'http://rubygems-proxy.torquebox.org/releases' }
+}
+
 dependencies {
     gems 'rubygems:asciidoctor-diagram:1.5.4'
 }
