@@ -26,7 +26,8 @@ ext {
 }
 
 repositories {
-    jcenter()
+    mavenLocal()
+    maven { url 'http://rubygems-proxy.torquebox.org/releases' }
 }
 
 dependencies {
@@ -69,7 +70,6 @@ asciidoctor {
             include 'reveal.js/**'
         }
     }
-    backends 'revealjs'
     attributes \
         'build-gradle': file('build.gradle'),
         'sourcedir': project.sourceSets.main.java.srcDirs[0],
