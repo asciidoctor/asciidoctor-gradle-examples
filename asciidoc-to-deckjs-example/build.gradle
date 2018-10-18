@@ -6,14 +6,13 @@ buildscript {
 }
 
 plugins {
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
     id 'com.github.jruby-gradle.base' version '1.4.0'
 }
 
-apply plugin: 'com.github.jruby-gradle.base'
+
 apply plugin: 'org.ysb33r.vfs'
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 
 version = '1.0.0-SNAPSHOT'
 
@@ -27,6 +26,7 @@ ext {
 
 repositories {
     jcenter()
+    maven { url "http://rubygems-proxy.torquebox.org/releases" }
 }
 
 dependencies {

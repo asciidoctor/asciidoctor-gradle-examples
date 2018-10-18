@@ -1,7 +1,7 @@
 plugins {
     id 'org.ajoberstar.github-pages' version '1.5.1'
     id 'org.asciidoctor.gradle.asciidoctor' version '1.5.1'
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
 }
 
 githubPages {

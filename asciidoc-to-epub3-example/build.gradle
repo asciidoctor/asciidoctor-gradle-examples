@@ -5,11 +5,10 @@ buildscript {
 }
 
 plugins {
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 
 version = '1.0.0-SNAPSHOT'
 
