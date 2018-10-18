@@ -1,10 +1,9 @@
 plugins {
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
     id 'org.kordamp.gradle.livereload' version '0.2.1'
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'org.kordamp.gradle.livereload'
 
 version = '1.0.0-SNAPSHOT'

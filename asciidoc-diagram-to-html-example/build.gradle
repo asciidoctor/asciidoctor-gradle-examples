@@ -1,10 +1,13 @@
 plugins {
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
     id 'com.github.jruby-gradle.base' version '1.4.0'
 }
 
+repositories {
+    maven { url "http://rubygems-proxy.torquebox.org/releases" }
+}
+
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 
 version = '1.0.0-SNAPSHOT'
 
