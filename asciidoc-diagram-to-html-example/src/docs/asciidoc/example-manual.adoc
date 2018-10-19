@@ -71,6 +71,34 @@ produces
      +-----------------------------------+
 ----
 
+Next demo is a graphviz block. This requires graphviz to be installed in the system.
+
+.Basic graphviz block
+[source]
+----
+[graphviz]
+....
+digraph g {
+    a -> b
+    b -> c
+    c -> d
+    d -> a
+}
+....
+----
+
+produces:
+
+[graphviz]
+----
+digraph g {
+    a -> b
+    b -> c
+    c -> d
+    d -> a
+}
+----
+
 == build.gradle
 
 [source,groovy]
