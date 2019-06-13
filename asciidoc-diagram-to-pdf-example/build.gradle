@@ -7,12 +7,12 @@ apply plugin: 'java'
 version = '1.0.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.6.1'
+    version = '2.0.0'
 }
 
 dependencies {
-    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16'
-    asciidoctor 'org.asciidoctor:asciidoctorj-diagram:1.5.12'
+    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.18'
+    asciidoctor 'org.asciidoctor:asciidoctorj-diagram:1.5.18'
 }
 
 asciidoctor {
@@ -21,28 +21,22 @@ asciidoctor {
         'build-gradle': file('build.gradle'),
         'sourcedir': project.sourceSets.main.java.srcDirs[0],
         'endpoint-url': 'http://example.org',
-        'source-highlighter': 'coderay',
-        'imagesdir': './images',
+        'source-highlighter': 'rouge',
+        'imagesdir': 'images',
         'toc': 'left',
         'icons': 'font',
-        'setanchors': '',
+        'sectanchors': '',
         'idprefix': '',
         'idseparator': '-',
-        'docinfo1': ''
+        'docinfo': 'shared'
 }
 
 asciidoctor {
-    dependsOn "asciidoctorPdf"
+    dependsOn 'asciidoctorPdf'
 }
 
 task asciidoctorPdf(type: org.asciidoctor.gradle.AsciidoctorTask) {
-    group "documentation"
-
-    copy {
-        from file('$sourceDir/images')
-        into file('$buildDir/asciidoc/pdf/images')
-        include('**/*.jpg')
-    }
+    group 'documentation'
 
     requires 'asciidoctor-diagram'
     backends 'pdf'
@@ -51,23 +45,10 @@ task asciidoctorPdf(type: org.asciidoctor.gradle.AsciidoctorTask) {
         'build-gradle': file('build.gradle'),
         'sourcedir': project.sourceSets.main.java.srcDirs[0],
         'endpoint-url': 'http://example.org',
-        'source-highlighter': 'coderay',
-        'imagesoutdir': '$buildDir/asciidoc/pdf/images',
-        'imagesdir': '$buildDir/asciidoc/pdf/images',
+        'source-highlighter': 'rouge',
+        'imagesdir': 'images',
         'toc': 'left',
         'icons': 'font',
-        'setanchors': '',
         'idprefix': '',
-        'idseparator': '-',
-        'docinfo1': ''
-}
-
-asciidoctorPdf.doFirst {
-    // FIXME this is not working
-    // copy static images to the same directory as the images generated for diagrams
-    copy {
-        from file('$sourceDir/images')
-        into file('$buildDir/asciidoc/pdf/images')
-        include('**/*.jpg')
-    }
+        'idseparator': '-'
 }
