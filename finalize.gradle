@@ -12,7 +12,7 @@ apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
 
 asciidoctorj {
-    version = '1.5.5'
+    version = '1.5.8.1'
 }
 
 asciidoctor {

@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15'
     }
 }
@@ -14,7 +14,7 @@ apply plugin: 'java'
 version = '1.0.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.5.5'
+    version = '1.5.8.1'
 }
 
 asciidoctor {
