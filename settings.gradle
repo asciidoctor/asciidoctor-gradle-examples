@@ -1,12 +1,3 @@
 rootProject.name = 'asciidoctor-gradle-examples'
 
-include 'asciidoc-diagram-to-html-example'
-include 'asciidoc-to-all-example'
-include 'asciidoc-to-epub3-example'
-include 'asciidoc-to-html-example'
-include 'asciidoc-to-html-livereload-example'
-include 'asciidoc-to-pdf-example'
-include 'asciidoc-to-pdf-with-theme-example'
-include 'asciidoc-to-deckjs-example'
 include 'asciidoc-to-revealjs-example'
-include 'asciidoc-to-github-pages-example'

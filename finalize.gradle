@@ -1,18 +1,16 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
-    }
+plugins {
+    id 'org.asciidoctor.jvm.gems' version '3.0.0'
+    id 'org.asciidoctor.jvm.convert' version '3.0.0'
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 
-asciidoctorj {
-    version = '1.5.5'
+repositories {
+    mavenCentral()
+    jcenter()
+    ruby {
+        gems()
+    }
 }
 
 asciidoctor {
@@ -20,12 +18,10 @@ asciidoctor {
     sources {
         include 'index.adoc'
     }
-    backends 'html5'
-    attributes \
-        'icons': 'font',
-        'setanchors': '',
-        'rootDir': file(rootDir),
-        'docinfo1': ''
+    attributes 'icons': 'font',
+               'setanchors': '',
+               'rootDir': file(rootDir),
+               'docinfo1': ''
 }
 
 task finalize(dependsOn: ['asciidoctor']) {
