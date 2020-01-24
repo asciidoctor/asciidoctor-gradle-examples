@@ -1,4 +1,4 @@
-image::https://travis-ci.org/asciidoctor/asciidoctor-gradle-examples.svg?branch=master[Build Status]
+image::https://travis-ci.org/asciidoctor/asciidoctor-gradle-examples.svg?branch=master[Build Status,link=https://travis-ci.org/asciidoctor/asciidoctor-gradle-examples]
 
 = Asciidoctor Gradle Plugin: Examples
 
