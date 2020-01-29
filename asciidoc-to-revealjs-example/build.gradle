@@ -1,6 +1,6 @@
 plugins {
-  id 'org.asciidoctor.jvm.gems' version '3.0.0'
-  id 'org.asciidoctor.jvm.revealjs' version '3.0.0'
+  id 'org.asciidoctor.jvm.gems' version '3.1.0'
+  id 'org.asciidoctor.jvm.revealjs' version '3.1.0'
 }
 
 apply plugin: 'java'
@@ -16,12 +16,12 @@ repositories {
 }
 
 revealjs {
-    version = '3.0.0'
+    version = '3.1.0'
 
     templateGitHub {
         organisation = 'hakimel'
         repository = 'reveal.js'
-        tag = '3.7.0'
+        tag = '3.9.1'
     }
 }
 
