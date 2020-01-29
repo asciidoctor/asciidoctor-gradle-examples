@@ -32,6 +32,10 @@ You can optionally run all of examples at once using the following command from 
 Alternatively, you can treat each project as a distinct module. Refer to the README file in each individual project to
 learn how to run it.
 
+
+link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example]::
+An example project that demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Gradle plugin.
+
 link:asciidoc-to-revealjs-example/README.adoc[asciidoc-to-revealjs-example]::
 Demonstrates how to convert AsciiDoc to reveal.js using Asciidoctor revealjs with the Asciidoctor Gradle plugin.
 
