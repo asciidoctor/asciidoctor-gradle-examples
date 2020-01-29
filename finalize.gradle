@@ -27,7 +27,7 @@ asciidoctor {
 task finalize(dependsOn: ['asciidoctor']) {
     doLast{
         copy {
-            from "$rootDir/build/asciidoc/html5"
+            from asciidoctor.getOutputs()
             into "$rootDir"
         }
     }
