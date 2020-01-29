@@ -42,12 +42,12 @@ This repository contains examples on how to use Gradle and Asciidoctor to create
 }
 
 subprojects {
-    task copyOutput(type: Copy) {
+    task copyOutput(type: Copy, dependsOn: ["asciidoctor"]) {
         from "$project.buildDir/asciidoc"
         into "$project.projectDir"
     }
 
-    task publish(dependsOn: ["asciidoctor", "copyOutput"]) {
+    task publish(dependsOn: "copyOutput") {
         doLast {
             File index = new File("$rootDir/build/index.adoc")
             def projectName = project.projectDir.name
