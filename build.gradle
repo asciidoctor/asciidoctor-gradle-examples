@@ -64,7 +64,7 @@ subprojects {
             new File("$project.buildDir/asciidoc").eachDir { dir ->
                 dir.eachFileMatch(~/.*\.(html|pdf|epub|mobi)/) { f ->
                     def dirName = dir.name
-                    outputs << "* link:/$rootDir.name/$projectName/$dirName/$f.name[$dirName]\n"
+                    outputs << "* link:./$projectName/$dirName/$f.name[$dirName]\n"
                 }
             }
             index << outputs.join('\n') << "\n"
