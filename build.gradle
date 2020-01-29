@@ -43,7 +43,7 @@ This repository contains examples on how to use Gradle and Asciidoctor to create
 
 subprojects {
     task copyOutput(type: Copy, dependsOn: ["asciidoctor"]) {
-        from "$project.buildDir/asciidoc"
+        from "$project.buildDir/docs"
         into "$project.projectDir"
     }
 
@@ -61,7 +61,7 @@ subprojects {
 """
             index << content
             def outputs = []
-            new File("$project.buildDir/asciidoc").eachDir { dir ->
+            new File("$project.buildDir/docs").eachDir { dir ->
                 dir.eachFileMatch(~/.*\.(html|pdf|epub|mobi)/) { f ->
                     def dirName = dir.name
                     outputs << "* link:./$projectName/$dirName/$f.name[$dirName]\n"

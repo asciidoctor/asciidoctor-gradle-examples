@@ -27,7 +27,6 @@ revealjs {
 
 asciidoctorRevealJs {
     sourceDir file("src/docs/asciidoc")
-    outputDir file("build/asciidoc/reveal")
 
     resources {
         from("${sourceDir}/images") {
