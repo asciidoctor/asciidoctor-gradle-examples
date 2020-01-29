@@ -1,0 +1,11 @@
+= HTML Example
+
+An example project that demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Gradle plugin.
+
+== Usage
+
+Convert the AsciiDoc to HTML5 by invoking the 'asciidoctor' goal:
+
+ $ ./gradlew asciidoctor
+
+Open the file _build/asciidoc/html/example-manual.html_  in your browser to see the generated HTML file.

@@ -1,3 +1,4 @@
 rootProject.name = 'asciidoctor-gradle-examples'
 
+include 'asciidoc-to-html-example'
 include 'asciidoc-to-revealjs-example'
