@@ -9,7 +9,7 @@ plugin in a Gradle project.
 
 You can browse the github pages to view the examples, the code, and sample output at
 
-http://asciidoctor.github.io/asciidoctor-gradle-examples/
+https://asciidoctor.github.io/asciidoctor-gradle-examples/
 
 == Getting the examples
 
