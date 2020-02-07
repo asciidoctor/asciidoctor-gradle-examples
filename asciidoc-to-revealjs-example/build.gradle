@@ -28,6 +28,8 @@ revealjs {
 asciidoctorRevealJs {
     sourceDir file("src/docs/asciidoc")
 
+    baseDirFollowsSourceFile()
+
     resources {
         from("${sourceDir}/images") {
             include '**'
@@ -44,7 +46,7 @@ asciidoctorRevealJs {
             'setanchors': '',
             'idprefix': 'slide-',
             'idseparator': '-',
-            'docinfo1': '',
+            'docinfo': 'shared',
             'revealjs_theme': 'black',
             'revealjs_transition': 'linear',
             'revealjs_history': 'true',
