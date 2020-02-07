@@ -14,4 +14,4 @@ If you're using IntelliJ you can generate the IDE's files via:
 
  $ ./gradlew idea
 
-Open the file _build/asciidoc/reveal/example-manual.html_ in your browser to see the generated revealjs file.
+Open the file _build/docs/asciidocRevealJs/example-deck.html_ in your browser to see the generated reveal.js file.
