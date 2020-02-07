@@ -1,7 +1,6 @@
 = Example Deck
 Doc Writer <doc.writer@example.org>
 2014-09-09
-:revnumber: {project-version}
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../java]
@@ -70,7 +69,7 @@ imagesdir:: {imagesdir}
 
 === Attributes Part 2
 .Custom
-project-version:: {project-version}
+revnumber:: {revnumber}
 sourcedir:: {sourcedir}
 endpoint-url:: {endpoint-url}
 
