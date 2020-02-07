@@ -14,6 +14,7 @@ repositories {
 }
 
 asciidoctor {
+    baseDirFollowsSourceDir()
     sourceDir = file("$rootProject.buildDir")
     sources {
         include 'index.adoc'
@@ -21,7 +22,7 @@ asciidoctor {
     attributes 'icons': 'font',
                'setanchors': '',
                'rootDir': file(rootDir),
-               'docinfo1': ''
+               'docinfo': 'shared'
 }
 
 task finalize(dependsOn: ['asciidoctor']) {
