@@ -1,9 +1,9 @@
 = Example Deck
 Doc Writer <doc.writer@example.org>
-2014-09-09
+2020-02-07
 :example-caption!:
-ifndef::imagesdir[:imagesdir: images]
-ifndef::sourcedir[:sourcedir: ../java]
+:imagesdir: images
+:sourcedir: ../../main/java
 
 == Introduction
 
