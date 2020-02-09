@@ -1,10 +1,11 @@
 = Example Manual
 Doc Writer <doc.writer@example.org>
 2014-09-09
-:revnumber: {project-version}
 :example-caption!:
-ifndef::imagesdir[:imagesdir: images]
-ifndef::sourcedir[:sourcedir: ../java]
+:source-highlighter: highlight.js
+:imagesdir: images
+:sourcedir: ../../main/java
+:build-gradle: ../../../build.gradle
 
 This is a user manual for an example project.
 
@@ -40,7 +41,7 @@ docfile:: {docfile}
 imagesdir:: {imagesdir}
 
 .Custom
-project-version:: {project-version}
+project-version:: {revnumber}
 sourcedir:: {sourcedir}
 endpoint-url:: {endpoint-url}
 
