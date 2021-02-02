@@ -30,6 +30,8 @@ This page was built by the following command:
 [.thumb]
 image::sunset.jpg[scaledwidth=75%]
 
+image:model_spy_targetplatform.png[pdfwidth=1%]
+
 == Attributes
 
 .Built-in
