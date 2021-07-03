@@ -1,0 +1,8 @@
+= User guide
+
+This is a user guide for an example project.
+
+== Introduction
+
+This project does something.
+We just haven't decided what that is yet.

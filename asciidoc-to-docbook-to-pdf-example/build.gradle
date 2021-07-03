@@ -1,0 +1,96 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name 'jboss-nexus'
+            url "http://repository.jboss.org/nexus/content/groups/public/"
+        }
+    }
+    dependencies {
+        classpath "org.jboss.jdocbook:gradle-jdocbook:1.2.2"
+        classpath 'saxon:saxon:6.5.3'
+        classpath 'net.sf.xslthl:xslthl:2.0.1' // Used by http://docbook.sourceforge.net/release/xsl/current/highlighting/common.xsl
+    }
+}
+
+plugins {
+	id 'org.asciidoctor.convert' version '1.5.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+apply plugin: "jdocbook"
+
+    buildDir = "build"
+
+
+version = '1.0.0-SNAPSHOT'
+
+asciidoctorj {
+    version = '1.5.4'
+}
+
+asciidoctor {
+	backends = ['docbook']
+	attributes	'build-gradle': file('build.gradle'),
+				'sourcedir': project.sourceSets.main.java.srcDirs[0],
+				'endpoint-url': 'http://example.org',
+				'source-highlighter' : 'coderay',
+				'imagesdir':'images',
+				'toc':'left',
+				'icons': 'font',
+				'setanchors':'true',
+				'idprefix':'',
+				'idseparator':'-',
+				'docinfo1':'true'
+    resources {
+        from (sourceDir) {
+        	include '**/images/**'
+        }
+    }
+}
+
+def adocBooks = [ "manual", "userguide", "reference" ]
+
+jdocbook {
+    masterLanguage = ''
+
+    format('pdf') {
+        finalName = "index.pdf"
+        stylesheet = "xsl/pdf.xsl"
+    }
+
+    // Use one per book, e.g. "manual"
+    // manual {
+    //     baseDirName = "$buildDir/asciidoc/docbook"
+    //     masterSourceDocumentName = 'example-manual.xml'
+    // }
+
+    // Or, use a list of books and generate automatically
+    adocBooks.each { name ->
+        create (name) {
+            baseDirName = "$buildDir/asciidoc/docbook/${name}/"
+            masterSourceDocumentName = "${name}.xml"
+        }
+    }
+
+}
+
+
+// Add a closure to the stageStyles_<book> task, to copy the required XSL
+adocBooks.each { name ->
+    tasks["stageStyles_$name"].doLast {
+        logger.lifecycle( "Staging PDF-specific style resources for $name")
+        copy {
+            into project.file( "$buildDir/docbook/stage/$name" )
+            from project.file( 'src/main/docbook' )
+            includeEmptyDirs = false
+        }
+    }
+}
+
+// buildDocs is the jdocbook "master target". It needs asciidoctor output.
+buildDocs.dependsOn asciidoctor
+
+defaultTasks 'buildDocs'
+

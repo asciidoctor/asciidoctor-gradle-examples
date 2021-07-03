@@ -1,0 +1,20 @@
+= HTML Example
+
+An example project that demonstrates how to convert AsciiDoc to PDF through the docbook AsciiDoctor
+plugin and then the jdocbook gradle plugin.
+
+Some notes:
+
+* I found little canonical information. There is a lot of trial-and-error here.
+* The jdocbook plugin requires stylesheets. They were taken from 
+  https://github.com/spring-gradle-plugins/docbook-reference-plugin[the spring "docbook-reference-plugin"].
+* The stylesheet requires java-libraries. The two that were needed to build this documentation were
+  (xslthl and saxon) were taken from https://github.com/spring-gradle-plugins/docbook-reference-plugin/blob/master/build.gradle.
+
+== Usage
+
+Convert the AsciiDoc to HTML5 by invoking the 'asciidoctor' goal:
+
+ $ ./gradlew buildDocs
+
+Open the file _build/asciidoc/html/example-manual.html_  in your browser to see the generated HTML file.
